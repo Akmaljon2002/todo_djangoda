@@ -68,6 +68,7 @@
         <hr/>
         {{k.status}}
         <br />
+        <button class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-pencil"></span><a href="/todo_edit/{{k.id}}">Tahrirlash</a></button>
         <button class="btn btn-primary" style="float: right;"><span class="glyphicon glyphicon-trash"></span><a href="/todo_ochir/{{k.id}}">O'chirish</a></button>
       </div>
       {% endfor %}

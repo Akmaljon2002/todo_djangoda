@@ -20,3 +20,17 @@ def todo_ochirish(request, son):
 
     return redirect("/")
 
+def todo_edit(request, son):
+    if request.method == "POST":
+        Kundalik.objects.filter(id=son).update(
+            sarlavha = request.POST.get('s'),
+            muddat = request.POST.get('m'),
+            batafsil = request.POST.get('b'),
+            status = request.POST.get('status')
+        )
+        return redirect("/")
+    data = {
+        "todo":Kundalik.objects.get(id=son),
+        "st":["Boshlanadi", "Boshlandi", "Bajarildi"]
+    }
+    return render(request, "todo_edit.html", data)

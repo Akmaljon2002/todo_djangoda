@@ -6,4 +6,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', home),
     path('todo_ochir/<int:son>/', todo_ochirish),
+    path('todo_edit/<int:son>/', todo_edit),
 ]

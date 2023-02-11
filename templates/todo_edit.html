@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Todo</title>
+</head>
+<body>
+  <h1>Tahrirlash</h1>
+  <br>
+  <hr>
+  <br>
+    <form method="post">{% csrf_token %}
+        <input name="s" type="text" value="{{todo.sarlavha}}">
+        <input name="m" type="text" value="{{todo.muddat}}">
+        <br>
+        <br>
+        <input name="b" type="text" value="{{todo.batafsil}}">
+        <select name="status">
+            <option value="{{todo.status}}">{{todo.status}}</option>
+            {% for i in st %}
+            {% if todo.status != i %}
+            <option value="{{i}}">{{i}}</option>
+            {% endif %}
+            {% endfor %}
+        </select>
+        <button type="submit">Yangilash</button>
+    </form>
+</body>
+</html>
