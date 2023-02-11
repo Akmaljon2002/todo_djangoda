@@ -14,3 +14,9 @@ def home(request):
     }
     return render(request, 'todo.html', data)
 
+def todo_ochirish(request, son):
+    todo = Kundalik.objects.get(id=son)
+    todo.delete()
+
+    return redirect("/")
+
